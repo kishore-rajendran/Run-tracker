@@ -1,0 +1,32 @@
+<form action="/action_page.php">
+    <div class="container1">
+        <h1>Register</h1>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required>
+
+        <label><b>Gender</b></label>
+        <div class="gender">
+            <input type="radio" name="gender">Male
+            <input type="radio" name="gender">Female
+            <input type="radio" name="gender">Others
+        </div>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="location"><b>Location</b></label>
+        <input type="text" placeholder="Enter Current Location" name="location" required>
+
+        <hr>
+        <button type="submit" class="registerbtn">Register</button>
+
+        <div class="signin">
+            <p>Already have an account? <LinkTo @route="login">Sign in</LinkTo>
+                .</p>
+        </div>
+    </div>
+</form>

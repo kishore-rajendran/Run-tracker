@@ -6,7 +6,20 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
+Router.map(function () {
+  this.route('registration');
+  this.route('login', { path: '/' });
+  this.route('feed');
+  this.route('activity', function () {
+    this.route('daily');
+    this.route('weekly');
+    this.route('monthly');
+    this.route('history');
+  });
+  this.route('profile');
+  this.route('friend');
+  this.route('change-password');
+  this.route('view-friend', { path: '/view-friend/:id' });
 });
 
 export default Router;

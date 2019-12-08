@@ -1,5 +1,30 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<nav>
 
+    <ul>
+        <li>
+            <LinkTo @route="feed">Home</LinkTo>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn">Activity
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <LinkTo @route="activity.daily">Daily</LinkTo>
+                    <LinkTo @route="activity.weekly">Weekly</LinkTo>
+                    <LinkTo @route="activity.monthly">Monthly</LinkTo>
+                    <LinkTo @route="activity.history">History</LinkTo>
+                </div>
+            </div>
+        </li>
+        <li>
+            <LinkTo @route="friend">Friends</LinkTo>
+        </li>
+        <li style="float:right">
+            <LinkTo class="active" @route="profile">Profile</LinkTo>
+        </li>
+    </ul>
+
+</nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {{outlet}}
