@@ -1,4 +1,4 @@
-<nav>
+<nav style="position: sticky;top:0; z-index:2">
 
     <ul>
         <li>
@@ -21,10 +21,12 @@
             <LinkTo @route="friend">Friends</LinkTo>
         </li>
         <li style="float:right">
-            <LinkTo class="active" @route="profile">Profile</LinkTo>
+            <a style="cursor: pointer;" {{action 'logout' }}>Logout</a>
+        </li>
+        <li style="float:right">
+            <LinkTo @route="profile">Profile</LinkTo>
         </li>
     </ul>
-
 </nav>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {{outlet}}

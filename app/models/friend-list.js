@@ -2,5 +2,5 @@ import DS from 'ember-data';
 const { Model } = DS;
 
 export default Model.extend({
-    friend: DS.belongsTo('user-details'),
+    //   userDetail: DS.belongsTo('user-detail'),
 });

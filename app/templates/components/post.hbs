@@ -1,16 +1,14 @@
 <div class="post">
-    {{!-- name:{{this.name}}<br>
-    distance:{{this.distance}}<br>
-    time:{{this.time}}<br>
-    <br>
-    <hr> --}}
     <div class="card">
         <div class="container3">
-            <h2>{{this.name}}</h2>
-            <b>Type:{{this.type}}<br></b>
-            <b>Distance:{{this.distance}}<br></b>
-            <b>Time:{{this.time}}<br></b>
-            <b>Pace:{{this.pace}}<br></b>
+            <h2 style="color:dimgray;">{{this.name}}</h2>
+            <b style="display: inline-block;color:coral">
+                {{this.title}}</b><br><br>
+            <div style="text-align: center;">
+                <img src={{this.image}} alt="image" width="400px" height="300px" />
+            </div>
+            <br>
+            <b style="display: inline-block;">{{this.content}}</b><br>
             <br>
         </div>
     </div>

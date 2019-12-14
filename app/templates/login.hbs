@@ -1,21 +1,15 @@
 <form action="#" method="post">
 
-    <div class="container">
+    <div class="container card center">
         <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
+        <Input @type="text" @placeholder="Enter Username" @name="uname" @value={{this.username}} @required="true" />
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <Input @type="password" @placeholder="Enter Password" @name="psw" @value={{this.password}} @required="true" />
 
-        <button type="submit">Login</button>
+        <button {{action "validate"}}>Login</button>
 
-        <div>
-            <span class="psw1">Forgot
-                <LinkTo @route="change-password">Password.</LinkTo>
-            </span>
-            <span class="psw">
-                <LinkTo @route="registration">Sign Up</LinkTo>
-            </span>
-        </div>
+        <span class="psw">
+            <LinkTo @route="registration">Sign Up</LinkTo>
+        </span>
     </div>
 </form>

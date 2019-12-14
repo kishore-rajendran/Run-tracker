@@ -20,6 +20,9 @@ Router.map(function () {
   this.route('friend');
   this.route('change-password');
   this.route('view-friend', { path: '/view-friend/:id' });
+  this.route('create-post');
+  this.route('edit-profile');
+  this.route('add-activity');
 });
 
 export default Router;

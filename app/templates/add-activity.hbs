@@ -1,0 +1,40 @@
+<div class="post" style="margin-top:75px ;">
+    <div class="card" style="padding:20px 0 0 20px;">
+        <div class="container3">
+            <h2 style="color:dimgray;">{{this.name}}</h2>
+            <b class="title" style="color:coral; font-size:18px">Type </b><b style="display: inline-block;">:&nbsp;</b>
+            <select class="select" onchange={{action "updateType" value='target.value'}}>
+                <option value="Jogging">Jogging</option>
+                <option value="Base Run">Base Run</option>
+                <option value="Progression Run">Progression Run</option>
+                <option value="Fartlek<">Fartlek</option>
+                <option value="Sprints">Sprints</option>
+                <option value="Hill Repeats">Hill Repeats</option>
+                <option value="Tempo Run">Tempo Run</option>
+            </select>
+            <br>
+            <br>
+            <b class="title" style="color:coral">Distance </b><b style="display: inline-block;">:&nbsp;
+            </b>
+            <Input @placeholder="Enter Distance in km" @type="text" @name="distance" @value={{this.distance}}
+                @required="true" style="display:inline-block;width:60%" />
+            <br>
+            <b class="title" style="color:coral">Time </b><b style="display: inline-block;">:&nbsp;
+            </b>
+            <Input @placeholder="Enter Run Time in minutes" @type="text" @name="time" @value={{this.time}}
+                @required="true" style="display:inline-block;width:60%" />
+            <br>
+            <b class="title" style="color:coral">Pace </b><b style="display: inline-block;">:
+                &nbsp;&nbsp;&nbsp;{{this.pace}} km/h</b><br>
+            <br>
+            <b class="title" style="color:coral">Date </b><b style="display: inline-block;">:&nbsp;
+            </b>
+            <input type="date" class="select" onchange={{action 'updateDate' value='target.value'}}>
+            <br>
+            <br><br>
+        </div>
+    </div>
+    <div class="AA-container">
+        <LinkTo @route="activity.history"><button {{action "add"}}>Add</button></LinkTo>
+    </div>
+</div>

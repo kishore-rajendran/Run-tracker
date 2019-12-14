@@ -1,1 +1,15 @@
-hlo
+{{#each this.model as |history|}}
+<div class="container card" style="margin-top:75px;">
+    <b class="title" style="color:coral">Date </b>
+    <b style="display: inline-block;">:&nbsp;{{history.date}}
+    </b><br>
+    <b class="title" style="color:coral">Type </b>
+    <b style="display: inline-block;">:&nbsp;{{history.type}}
+    </b><br>
+    <b class="title" style="color:coral">Distance </b>
+    <b style="display: inline-block;">:&nbsp;{{history.distance}} km
+    </b><br>
+    <b class="title" style="color:coral">Time</b>
+    <b style="display: inline-block;">:&nbsp;{{history.runTime}} min</b><br>
+</div>
+{{/each}}

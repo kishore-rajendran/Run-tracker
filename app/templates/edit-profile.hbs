@@ -1,0 +1,35 @@
+<form action="/action_page.php">
+    <div class="container1">
+        <h1>Register</h1>
+
+        <label for="email"><b>Email</b></label>
+        <Input @type="text" @placeholder="Enter Email" @name="email" @value={{this.email}} @disabled="true" />
+
+        <label for="name"><b>Name</b></label>
+        <Input @type="text" @placeholder="Enter Name" @name="name" @value={{this.name}} />
+
+        <label for="username"><b>Username</b></label>
+        <Input @type="text" @placeholder="Enter username" @name="name" @value={{this.username}} />
+
+        <label><b>Gender</b></label>
+        <div class="gender">
+            <input type="radio" name="gender" checked={{this.male}}
+                {{action "setGender" "male" preventDefault=false}}>Male
+            <input type="radio" name="gender" checked={{this.female}}
+                {{action "setGender" "female" preventDefault=false}}>Female
+            <input type="radio" name="gender" checked={{this.others}}
+                {{action "setGender" "others" preventDefault=false}}>Others
+        </div>
+
+        <label for="location"><b>Location</b></label>
+        <Input @type="text" @placeholder="Enter Current Location" @name="location" @value={{this.location}} required />
+
+        <hr>
+        <button type="submit" class="registerbtn" {{action "update"}}>Update</button>
+
+        <div class="signin">
+            <p>To change password click <LinkTo @route="change-password"> here</LinkTo>
+                .</p>
+        </div>
+    </div>
+</form>

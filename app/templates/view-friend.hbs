@@ -1,4 +1,30 @@
-<div class="container"><label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required disabled value="kishore">
+<div class="container1">
+    {{log this.model.user}}
+    <h1 class="pro">Profile</h1>
+    {{#unless (find this.model.user.friends this.model.id)}}
+    {{#unless (equal this.model.user.id this.model.id)}}
+    <button class="follow" {{action 'follow' this.model}}>FOLLOW</button>
+    {{/unless}}
+    {{/unless}}
+    {{!-- <button class="probutton">Follow</button> --}}
+    <div class="post">
+        <div class="card">
+            <div class="container3">
+                <br>
+                <b class="title" style="colorlightgray">Name </b><b style="display: inline-block;">:&nbsp;
+                    {{this.model.user.name}}</b><br>
+                <b class="title" style="colorlightgray">Userame </b><b style="display: inline-block;">:&nbsp;
+                    {{this.model.user.username}}</b><br>
+                <b class="title" style="colorlightgray">Gender </b><b style="display: inline-block;">:&nbsp;
+                    {{this.model.user.gender}}</b><br>
+                <b class="title" style="colorlightgray">Location </b><b style="display: inline-block;">:
+                    &nbsp;{{this.model.user.location}}</b><br>
+                <br>
+            </div>
+        </div>
+    </div>
 </div>
-
+{{#each this.model.user.posts as |post|}}
+<br><br>
+<Post @image={{post.image}} @title={{post.title}} @content={{post.content}} />
+{{/each}}
