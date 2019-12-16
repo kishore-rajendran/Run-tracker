@@ -9,13 +9,16 @@ export default Route.extend({
     actions: {
 
         add() {
+            let userDetail = this.store.findRecord('user-detail', JSON.parse(localStorage.getItem('profile')).id);
             var activity = {
                 time: this.controller.time,
                 date: this.controller.date,
                 distance: this.controller.distance,
                 runTime: this.controller.time,
                 type: this.controller.type,
-                userid: String(JSON.parse(localStorage.getItem('profile')).id),
+                userDetail: userDetail,
+                //userid: String(JSON.parse(localStorage.getItem('profile')).id),
+
             }
             let activityTracker = this.store.createRecord('activity-tracker', activity);
             activityTracker.save();

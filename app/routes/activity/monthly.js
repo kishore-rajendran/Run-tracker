@@ -7,13 +7,12 @@ export default Route.extend({
         }
     },
     model() {
-        return this.store.query("activity-tracker", {
-            userid: JSON.parse(localStorage.getItem('profile')).id,
+        return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
+            include: 'activityTrackers'
         }).then((value) => {
             let monthsName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             let months = {};
             let thisMonth = (new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000).getMonth());
-            console.log(thisMonth)
             for (let i = 0; i < 7; i++) {
                 months[monthsName[(thisMonth++) % 12]] = 0;
             }
@@ -36,7 +35,7 @@ export default Route.extend({
                     data: []
                 }
             };
-            value.forEach((record) => {
+            value.activityTrackers.forEach((record) => {
                 let date2 = new Date(record.get('date'));
                 let difTime = date1.getTime() - date2.getTime();
                 let diffDays = difTime / (1000 * 3600 * 24);

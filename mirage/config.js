@@ -24,7 +24,7 @@ export default function () {
 
   this.patch("/user-details/:id", (schema, request) => {
     // console.log(request);
-    let test = schema.userDetails.find(request.params.id);
+    //let test = schema.userDetails.find(request.params.id);
     var params = JSON.parse(request.requestBody);
     //params.data.attributes.password = test.attrs.password;
     schema.db.userDetails.update(request.params.id, params.data.attributes);
@@ -34,9 +34,8 @@ export default function () {
   })
 
   this.get("/user-details/:id", (schema, request) => {
-    let test = schema.userDetails.find(request.params.id)
-    //test.attrs.password = null;
-    // console.log(test);
+    let test = schema.userDetails.find(request.params.id);
+    console.log(test);
     return test;
   })
 

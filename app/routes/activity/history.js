@@ -7,11 +7,11 @@ export default Route.extend({
         }
     },
     model() {
-        return this.store.query("activity-tracker", {
-            userid: JSON.parse(localStorage.getItem('profile')).id,
+        return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
+            include: 'activityTrackers'
         }).then((value) => {
             let data = [];
-            value.forEach((value) => {
+            value.activityTrackers.forEach((value) => {
                 data.push(value);
             })
             return data.sort((a, b) => b.date.localeCompare(a.date));

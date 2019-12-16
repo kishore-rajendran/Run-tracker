@@ -9,7 +9,7 @@ export default Model.extend({
     email: DS.attr(),
     password: DS.attr(),
     friends: DS.attr(),
-    //    friendList: DS.hasMany('friend-list'),
+    friendLists: DS.hasMany('friend-list'),
     posts: DS.hasMany('post'),
-    //    activityTrackers: DS.belongsTo("activity-tracker"),
+    activityTrackers: DS.hasMany("activity-tracker"),
 });
