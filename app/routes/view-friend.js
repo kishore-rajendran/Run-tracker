@@ -6,6 +6,18 @@ export default Route.extend({
             this.transitionTo("login");
         }
     },
+
+    model(params) {
+        return this.store.findRecord("user-detail", params.id, {
+            include: 'posts'
+        }).then((user) => {
+            return {
+                id: JSON.parse(localStorage.getItem('profile')).id,
+                user: user,
+            }
+        })
+    },
+
     actions: {
         follow(model) {
             let friends = JSON.parse(model.user.friends);
@@ -28,14 +40,4 @@ export default Route.extend({
             // })
         }
     },
-    model(params) {
-        return this.store.findRecord("user-detail", params.id, {
-            include: 'posts'
-        }).then((user) => {
-            return {
-                id: JSON.parse(localStorage.getItem('profile')).id,
-                user: user,
-            }
-        })
-    }
 });

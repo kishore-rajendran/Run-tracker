@@ -1,27 +1,51 @@
-<div class="container1">
-
-    <h1 class="pro">Profile</h1>
-
-    <LinkTo @route="edit-profile" style="text-decoration: none; color:white;">
-        <button class="probutton">Edit</button></LinkTo>
-    <div class="post">
-        <div class="card">
-            <div class="container3">
-                <br>
-                <b class="title" style="colorlightgray">Name </b><b style="display: inline-block;">:&nbsp;
-                    {{this.model.name}}</b><br>
-                <b class="title" style="colorlightgray">Userame </b><b style="display: inline-block;">:&nbsp;
-                    {{this.model.username}}</b><br>
-                <b class="title" style="colorlightgray">Email </b><b style="display: inline-block;">:&nbsp;
-                    {{this.model.email}}</b><br>
-                <b class="title" style="colorlightgray">Gender </b><b style="display: inline-block;">:&nbsp;
-                    {{this.model.gender}}</b><br>
-                <b class="title" style="colorlightgray">Location </b><b style="display: inline-block;">:
-                    &nbsp;{{this.model.location}}</b><br>
-                <br>
-            </div>
+<div id="profile">
+    <h1>Profile</h1>
+    {{log this.editMode}}
+    {{#if this.editMode}}
+    <button class="probutton submit" {{action 'save' this.model}}>Save</button>
+    <div class="card">
+        <br>
+        <b class="title">Name </b><b>:&nbsp;</b>
+        <b class="inline-edit">
+            {{ember-inline-edit value=this.model.name showSaveButton=false showCancelButton=false}}</b>
+        <b class="title">Userame </b><b>:&nbsp;</b>
+        <b class="inline-edit">
+            {{ember-inline-edit value=this.model.username showSaveButton=false showCancelButton=false}}</b>
+        <b class="title">Location </b><b>:&nbsp;</b>
+        <b class="inline-edit">
+            {{ember-inline-edit value=this.model.location showSaveButton=false showCancelButton=false}}</b><br>
+        {{#if this.passwordChangeMode}}
+        <label for="psw"><b class="title">Old Password</b><b>:&nbsp;</b></label>
+        <Input class="password" @type="password" @placeholder="Enter Password" @name="psw"
+            @value={{this.oldPassword}} />
+        <label for="newPsw"><b class="title">New Password</b><b>:&nbsp;</b></label>
+        <Input class="password" @type="password" @placeholder="Enter Password" @name="newPsw"
+            @value={{this.newPassword}} />
+        {{else}}
+        <div>
+            <b>To change password click <i onclick={{action 'changePassword'}}>
+                    here</i>
+                .</b>
         </div>
+        {{/if}}
+        <br>
     </div>
+    {{else}}
+    <button class="probutton submit" {{action 'editOn'}}>Edit</button>
+    <div class="card">
+        <br>
+        <b class="title">Name </b><b>: {{this.model.name}}</b>
+        <br>
+        <b class="title">Userame </b><b>: {{this.model.username}}</b>
+        <br>
+        <b class="title">Email </b><b>: {{this.model.email}}</b>
+        <br>
+        <b class="title">Gender </b><b>: {{this.model.gender}}</b>
+        <br>
+        <b class="title">Location </b><b>: {{this.model.location}}</b>
+        <br>
+    </div>
+    {{/if}}
 </div>
 {{#each this.model.posts as |post|}}
 <Post @name={{this.model.name}} @image={{post.image}} @title={{post.title}} @content={{post.content}} />

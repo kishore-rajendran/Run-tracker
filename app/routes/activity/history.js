@@ -10,11 +10,12 @@ export default Route.extend({
         return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
             include: 'activityTrackers'
         }).then((value) => {
-            let data = [];
-            value.activityTrackers.forEach((value) => {
-                data.push(value);
-            })
-            return data.sort((a, b) => b.date.localeCompare(a.date));
+            // let data = [];
+            // value.activityTrackers.forEach((value) => {
+            //     data.push(value);
+            // })
+            // return data.sort((a, b) => b.date.localeCompare(a.date));
+            return value.activityTrackers.sortBy('date').reverseObjects();
         })
     }
 });

@@ -1,15 +1,11 @@
-<div class="post">
-    <div class="card">
-        <div class="container3">
-            <h2 style="color:dimgray;">{{this.name}}</h2>
-            <b style="display: inline-block;color:coral">
-                {{this.title}}</b><br><br>
-            <div style="text-align: center;">
-                <img src={{this.image}} alt="image" width="400px" height="300px" />
-            </div>
-            <br>
-            <b style="display: inline-block;">{{this.content}}</b><br>
-            <br>
-        </div>
+<div class="card" id="post">
+    <h2>{{this.name}}</h2>
+    <b class="title">
+        {{this.title}}</b><br><br>
+    <div class="image">
+        <img src={{this.image}} alt="image" />
     </div>
+    <br>
+    <b>{{this.content}}</b><br>
+    <br>
 </div>

@@ -1,9 +1,9 @@
-<div class="container card" style="margin-top:75px;">
+<div class="card" id="create-post">
     <label for="title"><b>Title</b></label>
     <Input @type="text" @placeholder="Title Of The Post" @name="Title" @value={{this.model.title}} />
     <label for="title"><b>Image</b></label>
     <Input @type="text" @placeholder="Enter Image URL" @name="image" @value={{this.model.image}} />
     <label for="content"><b>Content</b></label>
     <Textarea @type="text" @rows="8" @placeholder="Enter Content" @name="Content" @value={{this.model.content}} />
-    <button type="submit" {{action 'create' this.model}}>Create Post</button>
+    <button class="submit" type="submit" {{action 'create' this.model}}>Create Post</button>
 </div>

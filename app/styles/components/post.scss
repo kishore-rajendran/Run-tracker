@@ -1,0 +1,26 @@
+#post{
+    padding: 2px 16px;
+
+    .title{
+        margin-top: 10px;
+        color:coral;
+    }
+
+    .image{
+        text-align: center;
+
+        img{
+            width:400px;
+            height:300px;
+        }
+    }
+
+    h2{
+        margin-top: 10px;
+        color:dimgray;
+    }
+
+    b{
+        display: inline-block;
+    }
+}

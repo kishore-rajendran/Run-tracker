@@ -1,7 +1,5 @@
 <br>
 <br>
-{{!-- {{log "posts"}}
-{{log this.model}} --}}
 {{#each this.model.posts as |post|}}
 <Post @name={{this.model.name}} @image={{post.image}} @title={{post.title}} @content={{post.content}} />
 <br>

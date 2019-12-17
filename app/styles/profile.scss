@@ -1,0 +1,45 @@
+#profile{
+    width: 500px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: white;
+
+    h1{
+        display: inline-block;
+    }
+
+    .probutton {
+        margin: 0;
+        width: 75px;
+        padding: 8px;
+        float: right;
+    }
+
+    input{
+        display: inline-block;
+        width: 250px;
+    }
+
+    b{
+        display: inline-block;
+        color: gray;
+
+        &.title{
+            color:coral;
+            line-height: 48px;
+        }
+
+        &.inline-edit{
+            width: 250px;
+        }
+
+        i{
+            color:blue;
+            cursor:pointer;
+        }
+    }
+
+    .card{
+        padding: 2px 0 30px 30px;
+    }
+}

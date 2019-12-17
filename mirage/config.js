@@ -26,6 +26,7 @@ export default function () {
     // console.log(request);
     //let test = schema.userDetails.find(request.params.id);
     var params = JSON.parse(request.requestBody);
+    //console.log(params.data.attributes)
     //params.data.attributes.password = test.attrs.password;
     schema.db.userDetails.update(request.params.id, params.data.attributes);
     let out = schema.userDetails.find(request.params.id)

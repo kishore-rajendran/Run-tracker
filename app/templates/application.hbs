@@ -1,15 +1,15 @@
-<nav style="position: sticky;top:0; z-index:2">
+<nav class="main-navbar">
 
     <ul>
         <li>
             <LinkTo @route="feed">Home</LinkTo>
         </li>
         <li>
-            <div class="dropdown">
-                <button class="dropbtn">Activity
+            <div class="app-dropdown">
+                <button class="app-dropbtn">Activity
                     <i class="fa fa-caret-down"></i>
                 </button>
-                <div class="dropdown-content">
+                <div class="app-dropdown-content">
                     <LinkTo @route="activity.daily">Daily</LinkTo>
                     <LinkTo @route="activity.weekly">Weekly</LinkTo>
                     <LinkTo @route="activity.monthly">Monthly</LinkTo>
@@ -20,10 +20,10 @@
         <li>
             <LinkTo @route="friend">Friends</LinkTo>
         </li>
-        <li style="float:right">
-            <a style="cursor: pointer;" {{action 'logout' }}>Logout</a>
+        <li class="float-right">
+            <a {{action 'logout' }}>Logout</a>
         </li>
-        <li style="float:right">
+        <li class="float-right">
             <LinkTo @route="profile">Profile</LinkTo>
         </li>
     </ul>

@@ -24,7 +24,7 @@ export default Route.extend({
                 dataFormat: "json",
                 dataSource: {
                     chart: {
-                        caption: "Weekly Activity",
+                        caption: "",
                         subCaption: "",
                         xAxisName: "Period",
                         yAxisName: "Distance",
@@ -45,7 +45,7 @@ export default Route.extend({
                         let weekDate = new Date(weekKeys[week]);
                         let difWeekTime = weekDate.getTime() - date2.getTime();
                         let diffWeekDays = difWeekTime / (1000 * 3600 * 24);
-                        if (diffWeekDays >= -6 && diffWeekDays <= 0) {
+                        if (diffWeekDays >= -7 && diffWeekDays <= 0) {
                             weeks[weekKeys[week]] += +record.get('distance');
                         }
                     }

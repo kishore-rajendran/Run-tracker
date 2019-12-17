@@ -1,17 +1,18 @@
-body {
+/* body {
     font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 /* The dropdown container */
 
+/* 
 .dropdown {
     float: left;
     overflow: hidden;
-}
+} */
 
 /* Dropdown button */
 
-.dropdown .dropbtn {
+/* .dropdown .dropbtn {
     font-size: 16px;
     border: none;
     outline: none;
@@ -20,41 +21,44 @@ body {
     background-color: inherit;
     font-family: inherit;
     /* Important for vertical align on mobile phones */
-    margin: 0;
-    /* Important for vertical align on mobile phones */
-}
 
-.dropdown-content {
+/* margin: 0; */
+
+/* Important for vertical align on mobile phones */
+
+/* } */
+
+/* .dropdown-content {
     display: none;
     position: absolute;
     background-color: #333;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-}
+} */
 
 /* Links inside the dropdown */
 
-.dropdown-content a {
+/* .dropdown-content a {
     float: none;
     color: #fff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-}
+} */
 
 /* Add a grey background color to dropdown links on hover */
 
-.dropdown-content a:hover:not(.active) {
+/* .dropdown-content a:hover:not(.active) {
     background-color: #111;
-}
+} */
 
 /* Show the dropdown menu on hover */
 
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover .dropdown-content {
     display: block;
-}
+} 
 
 ul {
     list-style-type: none;
@@ -62,11 +66,11 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-}
+} 
 
 li {
     float: left;
-}
+} 
 
 li a {
     display: block;
@@ -78,7 +82,7 @@ li a {
 
 li a:hover:not(.active) {
     background-color: #111;
-}
+} 
 
 .active {
     background-color: #4CAF50;
@@ -87,11 +91,11 @@ li a:hover:not(.active) {
 #profile-pic {
     width: 20px;
     height: 20px;
-}
+} */
 
 /* login */
 
-form {
+/* form {
     border: 3px solid #fff;
 }
 
@@ -132,10 +136,11 @@ span.psw {
 span.psw1 {
     float: left;
     padding-top: 16px;
-}
+} */
 
 /* Change styles for span and cancel button on extra small screens */
 
+/* 
 @media screen and (max-width: 300px) {
     span.psw {
         display: block;
@@ -144,13 +149,13 @@ span.psw1 {
     span.psw1 {
         display: block;
     }
-}
+} */
 
 /* registration */
 
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
 
 /* Add padding to containers */
 
@@ -163,6 +168,7 @@ span.psw1 {
 
 /* Full-width input fields */
 
+/* 
 input[type=text], input[type=password], textarea {
     width: 100%;
     padding: 15px;
@@ -175,14 +181,15 @@ input[type=text], input[type=password], textarea {
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
-}
+} */
 
 /* Overwrite default styles of hr */
 
+/* 
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
-}
+} */
 
 /* Set a style for the submit button */
 
@@ -238,9 +245,11 @@ b {
 
 /* card */
 
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+/* .card {*/
+
+/* Add shadows to create the "card" effect */
+
+/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 5px;
     width: 450px;
@@ -249,15 +258,15 @@ b {
 
 /* On mouse-over, add a deeper shadow */
 
-.card:hover {
+/*.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Add some padding inside the card container */
 
-.container3 {
+/* .container3 {
     padding: 2px 16px;
-}
+} */
 
 .friend {
     text-decoration: none;
@@ -279,7 +288,7 @@ form.example input[type=text] {
     border-radius: 10px 0 0 10px;
 }
 
-.select {
+/* .select {
     padding: 10px;
     display: inline-block;
     font-size: 15px;
@@ -288,7 +297,7 @@ form.example input[type=text] {
     background: white;
     margin: 0;
     border-radius: 10px;
-}
+} */
 
 /* Style the submit button */
 
@@ -327,24 +336,24 @@ form.example::after {
     width: 400px;
 }
 
-.center {
+/* .center {
     margin: 10% auto;
     height: 305px;
-}
+} */
 
 b {
     color: gray;
 }
 
-.title {
+/* .title {
     display: inline-block;
     margin: 5px auto;
     width: 30%;
-}
+} */
 
 /* add post */
 
-#myBtn {
+/* #myBtn {
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -364,17 +373,7 @@ b {
 
 #myBtn:hover {
     background-color: rgb(223, 62, 4);
-}
-
-#AA-add {
-    width: 100px;
-    float: right;
-}
-
-#AA-post {
-    width: 100px;
-    float: left;
-}
+} */
 
 .AA-container {
     width: 400px;

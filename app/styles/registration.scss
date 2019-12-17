@@ -1,0 +1,41 @@
+#registration{
+    border: 3px solid #fff;
+    width: 500px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: white;
+    
+    .gender {
+        width: 100%;
+        padding: 15px 0 15px 0;
+        display: inline-block;
+        border: none;
+
+        input[type='radio']{
+            margin-right:10px ;
+        }
+
+        label{
+            display: inline;
+            margin-right: 50px;
+        }
+    }
+
+    .submit{
+        padding: 16px 20px;
+        margin: 8px 0;
+    }
+    
+    h1{
+        margin-bottom: 30px;
+    }
+
+    label{
+        display: block;
+        margin-top:23px;
+    }
+
+    p{
+        text-align: center;
+    }
+}

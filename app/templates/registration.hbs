@@ -1,35 +1,35 @@
-<form action="/action_page.php">
-    <div class="container1">
-        <h1>Register</h1>
+<div id="registration">
+    <h1>Register</h1>
 
-        <label for="email"><b>Email</b></label>
-        <Input @type="text" @placeholder="Enter Email" @name="email" @value={{this.email}} required />
+    <label for="email"><b>Email</b></label>
+    <Input @type="text" @placeholder="Enter Email" @name="email" @value={{this.model.email}} />
 
-        <label for="name"><b>Name</b></label>
-        <Input @type="text" @placeholder="Enter Name" @name="name" @value={{this.name}} required />
+    <label for="name"><b>Name</b></label>
+    <Input @type="text" @placeholder="Enter Name" @name="name" @value={{this.model.name}} />
 
-        <label for="username"><b>User name</b></label>
-        <Input @type="text" @placeholder="Enter username" @name="name" @value={{this.username}} required />
+    <label for="username"><b>User name</b></label>
+    <Input @type="text" @placeholder="Enter username" @name="name" @value={{this.model.username}} />
 
-        <label><b>Gender</b></label>
-        <div class="gender">
-            <input type="radio" name="gender" {{action "setGender" "male" preventDefault=false}}>Male
-            <input type="radio" name="gender" {{action "setGender" "female" preventDefault=false}}>Female
-            <input type="radio" name="gender" {{action "setGender" "others" preventDefault=false}}>Others
-        </div>
-
-        <label for="psw"><b>Password</b></label>
-        <Input @type="password" @placeholder="Enter Password" @name="psw" @value={{this.password}} required />
-
-        <label for="location"><b>Location</b></label>
-        <Input @type="text" @placeholder="Enter Current Location" @name="location" @value={{this.location}} required />
-
-        <hr>
-        <button type="submit" class="registerbtn" {{action "register"}}>Register</button>
-
-        <div class="signin">
-            <p>Already have an account? <LinkTo @route="login">Sign in</LinkTo>
-                .</p>
-        </div>
+    <label><b>Gender</b></label>
+    <div class="gender">
+        <input type="radio" name="gender" {{action "setGender" "male" model preventDefault=false}}><label>Male</label>
+        <input type="radio" name="gender"
+            {{action "setGender" "female" model preventDefault=false}}><label>Female</label>
+        <input type="radio" name="gender"
+            {{action "setGender" "others" model preventDefault=false}}><label>Others</label>
     </div>
-</form>
+
+    <label for="psw"><b>Password</b></label>
+    <Input @type="password" @placeholder="Enter Password" @name="psw" @value={{this.model.password}} />
+
+    <label for="location"><b>Location</b></label>
+    <Input @type="text" @placeholder="Enter Current Location" @name="location" @value={{this.model.location}} />
+
+    <hr>
+    <button type="submit" class="submit" {{action "register" this.model}}>Register</button>
+
+    <div class="signin">
+        <p>Already have an account? <LinkTo @route="login">Sign in</LinkTo>
+            .</p>
+    </div>
+</div>

@@ -1,15 +1,12 @@
-<form action="#" method="post">
+<div class="card" id="login">
+    <label for="uname"><b>Username</b></label>
+    <Input @type="text" @placeholder="Enter Username" @name="uname" @value={{this.username}} @required="true" />
+    <label for="psw"><b>Password</b></label>
+    <Input @type="password" @placeholder="Enter Password" @name="psw" @value={{this.password}} @required="true" />
 
-    <div class="container card center">
-        <label for="uname"><b>Username</b></label>
-        <Input @type="text" @placeholder="Enter Username" @name="uname" @value={{this.username}} @required="true" />
-        <label for="psw"><b>Password</b></label>
-        <Input @type="password" @placeholder="Enter Password" @name="psw" @value={{this.password}} @required="true" />
+    <button class="submit" {{action "validate"}}>Login</button>
 
-        <button {{action "validate"}}>Login</button>
-
-        <span class="psw">
-            <LinkTo @route="registration">Sign Up</LinkTo>
-        </span>
-    </div>
-</form>
+    <span class="psw">
+        <LinkTo @route="registration">Sign Up</LinkTo>
+    </span>
+</div>

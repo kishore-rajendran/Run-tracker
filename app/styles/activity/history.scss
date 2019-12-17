@@ -1,0 +1,14 @@
+.history{
+    margin: 75px auto;
+    padding: 16px;
+    width: 500px;
+
+    b{
+        display: inline-block;
+        color: gray;
+
+        &.title{
+            color:coral;
+        }
+    }
+}

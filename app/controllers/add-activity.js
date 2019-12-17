@@ -1,13 +1,14 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 export default Controller.extend({
-    distance: null,
-    date: null,
-    type: "Jogging",
+    // distance: null,
+    // date: null,
+    // type: "Jogging",
 
-    pace: computed('distance', 'time', function () {
-        if (!this.distance || !this.time) return 0;
-        return this.distance / (this.time / 60);
+    pace: computed('model.distance', 'model.time', function () {
+        console.log(this.model.distance)
+        if (!this.model.distance || !this.model.time) return 0;
+        return this.model.distance / (this.model.time / 60);
     }),
 
     actions: {
@@ -17,6 +18,11 @@ export default Controller.extend({
         updateDate(value) {
             this.date = value;
             console.log(value);
+        },
+        add(model) {
+            model.save().then(() => {
+                this.transitionToRoute('activity.history');
+            })
         }
     }
 })

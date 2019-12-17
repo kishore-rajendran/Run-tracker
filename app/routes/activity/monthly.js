@@ -18,14 +18,14 @@ export default Route.extend({
             }
             let date1 = new Date(Date.now() - 6 * 30 * 24 * 60 * 60 * 1000);
             let model = {
-                title: "WEEKLY ACTIVITY",
+                title: "MONTHLY ACTIVITY",
                 width: 700,
                 height: 400,
                 type: "column2d",
                 dataFormat: "json",
                 dataSource: {
                     chart: {
-                        caption: "Weekly Activity",
+                        caption: "",
                         subCaption: "",
                         xAxisName: "Period",
                         yAxisName: "Distance",
