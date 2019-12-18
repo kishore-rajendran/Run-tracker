@@ -8,8 +8,10 @@ export default Model.extend({
     location: DS.attr(),
     email: DS.attr(),
     password: DS.attr(),
-    friends: DS.attr(),
-    friendLists: DS.hasMany('friend-list'),
+    //friends: DS.attr(),
+    //friendLists: DS.hasMany('friend-list'),
+    children: DS.hasMany("user-detail", { inverse: null }),
+    parent: DS.belongsTo("user-detail", { inverse: null }),
     posts: DS.hasMany('post'),
     activityTrackers: DS.hasMany("activity-tracker"),
 });

@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import RSVP from 'rsvp';
 
 export default Route.extend({
     beforeModel() {
@@ -8,36 +9,35 @@ export default Route.extend({
     },
 
     model() {
-        return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
-            include: 'friendLists.userDetails'
-        }).then((value) => {
-            console.log(value)
-            //     console.log(1 + " " + value)
-            //     let userName = {
-            //         userSearch: null,
-            //         user: '',
-            //         friends: []
-            //     };
-            //     function shuffle(array) {
-            //         array.sort(() => Math.random() - 0.5);
-            //     }
-            //     value.friendLists.forEach((user) => {
-            //         if (!(user.id == JSON.parse(localStorage.getItem('profile')).id)) {
-            //             userName.friends.push(user);
-            //         }
-            //         else {
-            //             userName.user = user;
-            //         }
-            //     })
-            //     shuffle(userName.friends);
-            //     userName.friends.slice(0, 5);
-            //     console.log(userName)
-            //     return userName;
+        return RSVP.hash({
+            user: this.store.findRecord('user-detail', JSON.parse(localStorage.getItem('profile')).id, {
+                reload: true,
+                include: 'children'
+            }),
+            suggestions: this.store.query("user-detail", {
+            }).then((value) => {
+                let userName = {
+                    userSearch: null,
+                    friends: []
+                };
+                function shuffle(array) {
+                    array.sort(() => Math.random() - 0.5);
+                }
+                value.forEach((user) => {
+                    if (!(user.id == JSON.parse(localStorage.getItem('profile')).id)) {
+                        userName.friends.push(user);
+                    }
+                })
+                shuffle(userName.friends);
+                userName.friends.slice(0, 5);
+                return userName;
+            })
         })
     },
 
     actions: {
         search(model) {
+            console.log(model.userSearch)
             this.store.query('user-detail', {
                 username: model.userSearch,
             }).then((value) => {
@@ -49,24 +49,30 @@ export default Route.extend({
                 }
             })
         },
-        follow(user_id, model) {
-            // let friends = JSON.parse(model.user);
-            this.store.createRecord('friend-list', {
-                userDetail: JSON.parse(model.user),
-            })
-            // friends.push(+user_id)
-            // model.user.friends = JSON.stringify(friends);
-            // model.user.save();
-            // model.friends.forEach((user1) => {
-            //     if (user1.id === user_id) {
-            //         let friends = JSON.parse(user1.friends);
-            //         friends.push(+model.user.id);
-            //         user1.friends = JSON.stringify(friends);
-            //         user1.save();
-            //     }
-            // })
-
+        follow(user, friend) {
+            user.get('children').addObject(friend);
+            friend.get('children').addObject(user);
+            user.save();
+            friend.save();
         }
+        // follow(user_id, model) {
+        //     // let friends = JSON.parse(model.user);
+        //     this.store.createRecord('friend-list', {
+        //         userDetail: JSON.parse(model.user),
+        //     })
+        //     // friends.push(+user_id)
+        //     // model.user.friends = JSON.stringify(friends);
+        //     // model.user.save();
+        //     // model.friends.forEach((user1) => {
+        //     //     if (user1.id === user_id) {
+        //     //         let friends = JSON.parse(user1.friends);
+        //     //         friends.push(+model.user.id);
+        //     //         user1.friends = JSON.stringify(friends);
+        //     //         user1.save();
+        //     //     }
+        //     // })
+
+        // }
     },
 
 

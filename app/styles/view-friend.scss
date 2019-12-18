@@ -1,3 +1,38 @@
 #view-friend{
-    
+    width: 500px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: white;
+
+    h1{
+        display: inline-block;
+    }
+
+    .follow{
+        float: right;
+        width: 100px;
+        height: 30px;
+        padding: 5px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+
+    .card{
+        padding: 2px 16px;
+
+        .title{
+            color: coral;
+        }
+
+        b{
+            color:gray;
+            display: inline-block;
+        }
+    }
 }

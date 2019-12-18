@@ -41,10 +41,19 @@ export default function () {
   })
 
   this.get("/user-details", (schema, request) => {
-    if (Object.keys(request.queryParams).length === 0) {
-      return schema.userDetails.all();
+    if (request.queryParams.id !== undefined) {
+      return schema.userDetails.where({
+        id: request.queryParams.id
+      });
     }
-    return schema.userDetails.where(request.queryParams);
+
+    if (request.queryParams.username !== undefined) {
+      return schema.userDetails.where(request.queryParams);
+
+    }
+    return schema.userDetails.all();
+
+
   })
 
   this.get("/activity-trackers", (schema, request) => {

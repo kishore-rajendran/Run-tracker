@@ -1,0 +1,70 @@
+#friend{
+    margin: 50px auto;
+    width: 500px;
+
+    .search{
+        border-color: #fff;
+        
+        input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid lightgrey;
+            float: left;
+            width: 80%;
+            background: white;
+            margin: 0;
+            border-radius: 10px 0 0 10px;
+        }
+
+        button {
+            float: left;
+            width: 20%;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid lightgrey;
+            border-left: none;
+            cursor: pointer;
+            border-radius: 0 10px 10px 0;
+
+            &:hover{
+                background: #0b7dda;
+            }
+        }
+        &::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+    
+    .card{
+        padding: 20px;
+
+        .follow{
+            float: right;
+            width: 100px;
+            height: 30px;
+            padding: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+    
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+
+
+    a{
+        text-decoration: none;
+        color:coral;
+    }
+
+    b{
+        color: gray;
+    }
+}

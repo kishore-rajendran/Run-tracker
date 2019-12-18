@@ -8,6 +8,7 @@ export default Route.extend({
     },
     model() {
         return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
+            reload: true,
             include: 'activityTrackers'
         }).then((value) => {
             let monthsName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -37,9 +38,9 @@ export default Route.extend({
             };
             value.activityTrackers.forEach((record) => {
                 let date2 = new Date(record.get('date'));
-                let difTime = date1.getTime() - date2.getTime();
+                let difTime = date2.getTime() - date1.getTime();
                 let diffDays = difTime / (1000 * 3600 * 24);
-                if (diffDays >= -(6 * 30) && diffDays <= 0) {
+                if (diffDays >= 0 && diffDays <= (6 * 30)) {
                     months[monthsName[new Date(record.get('date')).getMonth()]] += +record.get('distance');
                 }
             })

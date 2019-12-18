@@ -8,6 +8,7 @@ export default Route.extend({
     },
     model() {
         return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
+            reload: true,
             include: 'activityTrackers'
         }).then((value) => {
             // let data = [];

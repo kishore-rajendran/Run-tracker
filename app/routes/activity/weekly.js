@@ -8,6 +8,7 @@ export default Route.extend({
     },
     model() {
         return this.store.findRecord("user-detail", JSON.parse(localStorage.getItem('profile')).id, {
+            reload: true,
             include: 'activityTrackers'
         }).then((value) => {
             let weeks = {};
@@ -38,14 +39,14 @@ export default Route.extend({
             let weekKeys = Object.keys(weeks);
             value.activityTrackers.forEach((record) => {
                 let date2 = new Date(record.get('date'));
-                let difTime = date1.getTime() - date2.getTime();
+                let difTime = date2.getTime() - date1.getTime();
                 let diffDays = difTime / (1000 * 3600 * 24);
-                if (diffDays >= -55 && diffDays <= 0) {
+                if (diffDays >= 0 && diffDays <= 55) {
                     for (let week = 0; week < weekKeys.length; week++) {
                         let weekDate = new Date(weekKeys[week]);
-                        let difWeekTime = weekDate.getTime() - date2.getTime();
+                        let difWeekTime = date2.getTime() - weekDate.getTime();
                         let diffWeekDays = difWeekTime / (1000 * 3600 * 24);
-                        if (diffWeekDays >= -7 && diffWeekDays <= 0) {
+                        if (diffWeekDays >= -1 && diffWeekDays <= 7) {
                             weeks[weekKeys[week]] += +record.get('distance');
                         }
                     }

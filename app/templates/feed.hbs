@@ -1,7 +1,8 @@
 <br>
 <br>
-{{#each this.model.posts as |post|}}
-<Post @name={{this.model.name}} @image={{post.image}} @title={{post.title}} @content={{post.content}} />
+{{#each this.model as |postDetail|}}
+<Post @name={{postDetail.name}} @image={{postDetail.post.image}} @title={{postDetail.post.title}}
+    @content={{postDetail.content}} />
 <br>
 {{/each}}
 <LinkTo id="myBtn" @route="create-post">+</LinkTo>

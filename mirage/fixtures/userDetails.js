@@ -93,10 +93,10 @@ export default [
     //     }
     //     ]
     // }
-    { id: "1", 'username': 'kishore', 'name': 'Kishore', 'location': 'coimbatore', 'gender': 'male', 'email': 'kishore@zoomrx.com', "password": "123456789", 'friends': '[2,3,4]', postIds: [1, 2, 4, 5, 6], activityTrackerIds: [1, 2, 3, 4, 5], friendListIds: [2, 3, 4] },
-    { id: "2", 'username': 'sachin', 'name': 'Sachin', 'location': 'chennai', 'gender': 'male', 'email': 'sachin@zoomrx.com', "password": "123456789", 'friends': '[1,3,4,6]', postIds: [3, 4, 5, 7], activityTrackerIds: [6], friendListIds: [1, 3, 4, 6] },
-    { id: "3", 'username': 'surendar', 'name': 'Surendar', 'location': 'Madhurai', 'gender': 'male', 'email': 'surendar@zoomrx.com', "password": "123456789", 'friends': '[1,2,4]', postIds: [1, 5, 7], activityTrackerIds: [7], friendListIds: [1, 2, 4] },
-    { id: "4", 'username': 'ram', 'name': 'Ram', 'location': 'Theni', 'gender': 'male', 'email': 'ram@zoomrx.com', "password": "123456789", 'friends': '[1,2,3]', postIds: [1, 2, 3], activityTrackerIds: [8], friendListIds: [1, 2, 3] },
-    { id: "5", 'username': 'vijay', 'name': 'Vijay', 'location': 'Salem', 'gender': 'male', 'email': 'vijay@zoomrx.com', "password": "123456789", 'friends': '[6]', postIds: [4, 5, 6], activityTrackerIds: [9], friendListIds: [6] },
-    { id: "6", 'username': 'tamil', 'name': 'Tamil', 'location': 'tirupur', 'gender': 'male', 'email': 'tamil@zoomrx.com', "password": "123456789", 'friends': '[2,5]', postIds: [1, 2, 3, 5, 7], activityTrackerIds: [10], friendListIds: [2, 5] },
+    { id: "1", 'username': 'kishore', 'name': 'Kishore', 'location': 'coimbatore', 'gender': 'male', 'email': 'kishore@zoomrx.com', "password": "123456789", 'friends': '[2,3,4]', postIds: [1, 2, 4, 5, 6], activityTrackerIds: [1, 2, 3, 4, 5], childIds: [2, 3, 4], parentId: 1 },
+    { id: "2", 'username': 'sachin', 'name': 'Sachin', 'location': 'chennai', 'gender': 'male', 'email': 'sachin@zoomrx.com', "password": "123456789", 'friends': '[1,3,4,6]', postIds: [3, 4, 5, 7], activityTrackerIds: [6], childIds: [1, 3, 4, 6], parentId: 2 },
+    { id: "3", 'username': 'surendar', 'name': 'Surendar', 'location': 'Madhurai', 'gender': 'male', 'email': 'surendar@zoomrx.com', "password": "123456789", 'friends': '[1,2,4]', postIds: [1, 5, 7], activityTrackerIds: [7], childIds: [1, 2, 4], parentId: 3 },
+    { id: "4", 'username': 'ram', 'name': 'Ram', 'location': 'Theni', 'gender': 'male', 'email': 'ram@zoomrx.com', "password": "123456789", 'friends': '[1,2,3]', postIds: [1, 2, 3], activityTrackerIds: [8], childIds: [1, 2, 3], parentId: 4 },
+    { id: "5", 'username': 'vijay', 'name': 'Vijay', 'location': 'Salem', 'gender': 'male', 'email': 'vijay@zoomrx.com', "password": "123456789", 'friends': '[6]', postIds: [4, 5, 6], activityTrackerIds: [9], childIds: [6], parentId: 5 },
+    { id: "6", 'username': 'tamil', 'name': 'Tamil', 'location': 'tirupur', 'gender': 'male', 'email': 'tamil@zoomrx.com', "password": "123456789", 'friends': '[2,5]', postIds: [1, 2, 3, 5, 7], activityTrackerIds: [10], childIds: [2, 5], parentId: 6 },
 ];

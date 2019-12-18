@@ -1,29 +1,26 @@
-<div class="container4">
-    <form class="example">
+<div id="friend">
+    <div class="search">
         <Input @type="text" @placeholder="Search.." @name="search" @value={{this.model.userSearch}} />
         <button class="invite" {{action "search" this.model}}><i class="fa fa-search"></i></button>
-    </form>
-</div>
-<br>
-<br>
-
-<!--why not loaded at first time-->
-{{#each this.model.friends as |user|}}
-{{!-- {{#unless (equal this.user_id user.id)}} --}}
-<div class="post">
+    </div>
+    <br>
+    <br>
+    {{log model}}
+    <!--why not loaded at first time-->
+    {{#each this.model.suggestions.friends as |user|}}
+    {{!-- {{#unless (equal this.user_id user.id)}} --}}
     <LinkTo @route="view-friend" class="friend" @model={{user.id}}>
         <div class="card">
-            <div class="container3">
-                {{#unless (find user.friends this.model.user.id)}}
-                <button class="follow" {{action 'follow' user.id this.model}}>FOLLOW</button>
-                {{/unless}}
-                <h2>{{user.name}}</h2>
-                <b>@{{user.username}}</b>
-                <br>
-            </div>
+            {{#if (not (follow user.id model.user.children))}}
+            <button class="follow" {{action 'follow' model.user user}}>FOLLOW</button>
+            {{/if}}
+            <h2>{{user.name}}</h2>
+            <b>@{{user.username}}</b>
+            <br>
         </div>
     </LinkTo>
+    <br>
+    {{!-- {{/unless}} --}}
+    {{/each}}
+
 </div>
-<br>
-{{!-- {{/unless}} --}}
-{{/each}}
