@@ -36,7 +36,7 @@ export default function () {
 
   this.get("/user-details/:id", (schema, request) => {
     let test = schema.userDetails.find(request.params.id);
-    console.log(test);
+    // console.log(test);
     return test;
   })
 

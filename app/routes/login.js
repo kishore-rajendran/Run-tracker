@@ -33,7 +33,7 @@ export default Route.extend({
                     "hideMethod": "fadeOut"
                 });
                 this.transitionTo("feed");
-            }).catch((value) => {
+            }).catch(() => {
                 this.notifications.error("Login failed", "Login", {
                     "closeButton": false,
                     "debug": false,

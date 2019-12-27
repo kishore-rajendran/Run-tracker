@@ -41,7 +41,6 @@ export default Route.extend({
                 let date2 = new Date(record.get('date'));
                 let difTime = date2.getTime() - date1.getTime();
                 let diffDays = difTime / (1000 * 3600 * 24);
-                console.log(diffDays)
                 if (diffDays >= -1 && diffDays <= 7) {
                     day[days[new Date(record.get('date')).getDay()]] += +record.get('distance');
                 }
@@ -56,3 +55,7 @@ export default Route.extend({
         });
     }
 });
+
+
+
+37

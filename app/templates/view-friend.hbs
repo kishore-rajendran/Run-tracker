@@ -1,13 +1,8 @@
 <div id="view-friend">
-    {{log this.model.user}}
-    {{!-- {{#each model.user.children as |children|}}
-    {{children.name}}
-    {{/each}} --}}
     <h1>Profile</h1>
     {{#if (not (follow this.model.friend.id this.model.user.children))}}
-    {{!-- {{#if (not  this.model.user.children.find((user)=>{user.id===this.model.friend.id;}))}} --}}
     {{#if (not-eq this.model.friend.id this.model.user.id)}}
-    <button class="follow" {{action 'follow' this.model}}>FOLLOW</button>
+    <button class="follow" {{action "follow" this.model}}>FOLLOW</button>
     {{/if}}
     {{/if}}
     <div class="card">
@@ -20,6 +15,6 @@
     </div>
 </div>
 {{#each this.model.friend.posts as |post|}}
-<br><br>
-<Post @image={{post.image}} @title={{post.title}} @content={{post.content}} />
+    <br><br>
+    <Post @image={{post.image}} @title={{post.title}} @content={{post.content}} />
 {{/each}}

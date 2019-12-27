@@ -52,13 +52,13 @@ export default Route.extend({
                     }
                 }
             })
-
             for (let i in weeks) {
                 model.dataSource.data.push({
                     label: i,
                     value: weeks[i],
                 });
             }
+            model.dataSource.data.reverse();
             return model;
         });
     }

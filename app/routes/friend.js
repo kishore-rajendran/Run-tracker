@@ -37,7 +37,7 @@ export default Route.extend({
 
     actions: {
         search(model) {
-            console.log(model.userSearch)
+            // console.log(model.userSearch)
             this.store.query('user-detail', {
                 username: model.userSearch,
             }).then((value) => {

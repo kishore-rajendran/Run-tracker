@@ -14,9 +14,6 @@ export default Route.extend({
                 reload: true,
                 include: 'children,posts'
             }).then((value) => {
-                value.children.forEach((user) => {
-                    console.log(user.name)
-                })
                 return value;
             }),
             friend: this.store.findRecord("user-detail", params.id, {

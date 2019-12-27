@@ -5,7 +5,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     //    signedIn: service('login'),
     beforeModel() {
-        if (!JSON.parse(localStorage.getItem("profile")).logged == true) {
+        if (!JSON.parse(localStorage.getItem("profile")).logged) {
             this.transitionTo("login");
         }
     },
@@ -17,7 +17,7 @@ export default Route.extend({
         }).then((data) => {
             let posts = [];
             data.forEach((user) => {
-                console.log(user)
+                // console.log(user)
                 user.posts.forEach((post) => {
                     posts.push({
                         name: user.name,

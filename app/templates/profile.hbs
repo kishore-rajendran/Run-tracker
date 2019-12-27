@@ -1,13 +1,12 @@
 <div id="profile">
     <h1>Profile</h1>
-    {{log this.editMode}}
     {{#if this.editMode}}
-    <button class="probutton submit" {{action 'save' this.model}}>Save</button>
+    <button class="probutton submit" {{action "save" this.model}}>Save</button>
     <div class="card">
         <br>
         <b class="title">Name </b><b>:&nbsp;</b>
         <b class="inline-edit">
-            {{ember-inline-edit value=this.model.name showSaveButton=false showCancelButton=false}}</b>
+            {{ember-inline-edit value=this.model.name showSaveButton=false showCancelButton=false enabled=false}}</b>
         <b class="title">Userame </b><b>:&nbsp;</b>
         <b class="inline-edit">
             {{ember-inline-edit value=this.model.username showSaveButton=false showCancelButton=false}}</b>
@@ -23,7 +22,7 @@
             @value={{this.newPassword}} />
         {{else}}
         <div>
-            <b>To change password click <i onclick={{action 'changePassword'}}>
+            <b>To change password click <i onclick={{action "changePassword"}}>
                     here</i>
                 .</b>
         </div>
@@ -31,7 +30,7 @@
         <br>
     </div>
     {{else}}
-    <button class="probutton submit" {{action 'editOn'}}>Edit</button>
+    <button class="probutton submit" {{action "editOn"}}>Edit</button>
     <div class="card">
         <br>
         <b class="title">Name </b><b>: {{this.model.name}}</b>

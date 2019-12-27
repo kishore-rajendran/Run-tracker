@@ -5,14 +5,12 @@
     </div>
     <br>
     <br>
-    {{log model}}
-    <!--why not loaded at first time-->
     {{#each this.model.suggestions.friends as |user|}}
     {{!-- {{#unless (equal this.user_id user.id)}} --}}
     <LinkTo @route="view-friend" class="friend" @model={{user.id}}>
         <div class="card">
             {{#if (not (follow user.id model.user.children))}}
-            <button class="follow" {{action 'follow' model.user user}}>FOLLOW</button>
+            <button class="follow" {{action "follow" model.user user}}>FOLLOW</button>
             {{/if}}
             <h2>{{user.name}}</h2>
             <b>@{{user.username}}</b>
