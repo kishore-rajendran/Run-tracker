@@ -1,3 +1,8 @@
+An ember application that have the functionality of tracking your running performance and connecting with friends and authenticating users.
+used ember mirage to mock data
+
+
+
 # run
 
 This README outlines the details of collaborating on this Ember application.
